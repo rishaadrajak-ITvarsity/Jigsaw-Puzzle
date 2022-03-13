@@ -1,0 +1,114 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%; 
+    background-color: deepskyblue;
+}
+
+#grid1-1, #grid1-2, #grid1-3,
+#grid2-1, #grid2-2, #grid2-3,
+#grid3-1, #grid3-2, #grid3-3,
+#img1-1-draggable, #img1-2-draggable, #img1-3-draggable,
+#img2-1-draggable, #img2-2-draggable, #img2-3-draggable,
+#img3-1-draggable, #img3-2-draggable, #img3-3-draggable{
+    position: absolute;
+}
+
+/* == row 1 == */
+#grid1-1, #grid1-2, #grid1-3{
+    top: 60px;
+}
+
+/* == row 2 == */
+#grid2-1, #grid2-2, #grid2-3{
+    top: 260px;
+}
+
+/* == row 3 == */
+#grid3-1, #grid3-2, #grid3-3{
+    top: 460px;
+}
+
+/* || col 1 || */
+#grid1-1, #grid2-1, #grid3-1{
+    left: 360px;
+}
+
+/* || col 2 || */
+#grid1-2, #grid2-2, #grid3-2{
+    left: 560px;
+}
+
+/* || col 3 || */
+#grid1-3, #grid2-3, #grid3-3{
+    left: 760px;
+}
+
+
+/* ==================== shuffled initial positions ==================== */
+
+#img1-1-draggable{
+    top: 250px;
+    left: 100px;
+} 
+#img1-2-draggable{
+    top: 40px;
+    right: 50px;
+} 
+#img1-3-draggable{
+    bottom: 30px;
+    right: 100px;
+}
+#img2-1-draggable{
+    bottom: 30px;
+    left: 100px;
+} 
+#img2-2-draggable{
+    top: 170px;
+    right: 100px;
+} 
+#img2-3-draggable{
+    bottom: 80px;
+    left: 40px;
+}
+#img3-1-draggable{
+    top: 350px;
+    right: 40px;
+} 
+#img3-2-draggable{
+    top: 180px;
+    left: 40px;
+}
+#img3-3-draggable{
+    top: 30px;
+    left: 100px;
+}
+
+/* ==================== buttons ==================== */
+
+#buttons{
+    position: absolute;
+    top: 10px;
+    left: 440px;
+}
+
+#buttons form{
+    display: inline;
+}
+
+#buttons button, #buttons input{
+    width: 200px;
+    font-size: 26px;
+    background-color: orangered;
+    color: white;
+    text-transform: uppercase;
+    padding: 2px;
+    border: 2px solid black;
+    border-radius: 6px;
+    margin-left: 20px;
+}
+
+#buttons button:hover, #buttons input:hover{
+    background-color: lightcoral;
+}

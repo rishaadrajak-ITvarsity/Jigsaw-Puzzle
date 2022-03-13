@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="javascript/api.js"></script>
+    </head>
+    <body>
+        <div id="buttons">
+            <button onclick="solve()">solve</button>
+            <form>
+                <input type="submit" value="reset">
+            </form>
+        </div>
+
+        <img src="images/puzzle-grid.png" class="puzzle-grid-drop" id="grid1-1"/>
+        <img src="images/puzzle-grid.png" class="puzzle-grid-drop" id="grid1-2"/>
+        <img src="images/puzzle-grid.png" class="puzzle-grid-drop" id="grid1-3"/>
+        <img src="images/puzzle-grid.png" class="puzzle-grid-drop" id="grid2-1"/>
+        <img src="images/puzzle-grid.png" class="puzzle-grid-drop" id="grid2-2"/>
+        <img src="images/puzzle-grid.png" class="puzzle-grid-drop" id="grid2-3"/>
+        <img src="images/puzzle-grid.png" class="puzzle-grid-drop" id="grid3-1"/>
+        <img src="images/puzzle-grid.png" class="puzzle-grid-drop" id="grid3-2"/>
+        <img src="images/puzzle-grid.png" class="puzzle-grid-drop" id="grid3-3"/>
+
+        <img src="images/img1-1.png" id="img1-1-draggable"/>
+        <img src="images/img1-2.png" id="img1-2-draggable"/>
+        <img src="images/img1-3.png" id="img1-3-draggable"/>
+        <img src="images/img2-1.png" id="img2-1-draggable"/>
+        <img src="images/img2-2.png" id="img2-2-draggable"/>
+        <img src="images/img2-3.png" id="img2-3-draggable"/>
+        <img src="images/img3-1.png" id="img3-1-draggable"/>
+        <img src="images/img3-2.png" id="img3-2-draggable"/>
+        <img src="images/img3-3.png" id="img3-3-draggable"/>
+
+        <script>
+            function solve(){
+                var referenceTop = 60, referenceLeft = 360; // reference values of top and left; initially 0,0 
+                var imageHeight = 200, imageWidth = 200; // height and width of images 
+                var top=referenceTop, left=referenceLeft; // new top and left positions
+                var row, col; // row and column counter
+
+                for(row=1; row<=3; row++){
+                    (row==1)?top=top:top+=imageHeight; //when row is 1, leave at reference value
+
+                    for(col=1; col<=3; col++){ 
+                        //format of id: img1-1-draggable
+
+                        (col==1)?left=left:left+=imageWidth; // when col is 1, leave at reference value; otherwise, add 200px
+
+                        var e = document.getElementById("img"+row+"-"+col+"-"+"draggable");
+                        e.style.position = "absolute";
+                        e.style.transitionDuration = "2000ms";
+                        e.style.top = top+"px";
+                        e.style.left = left+"px";
+                    }
+                    left=referenceLeft; // reset column value before moving to next row
+                }
+                // var a = document.getElementById("img1-1-draggable");
+                // a.style.top = "60px";
+                // a.style.left = "360px";
+
+                // var a = document.getElementById("img1-2-draggable");
+                // a.style.top = "60px";
+                // a.style.left = "560px";
+            }
+        </script>
+
+    </body>
+</html>
